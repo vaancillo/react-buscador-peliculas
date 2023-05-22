@@ -1,21 +1,21 @@
-export function ListOfMovies ({ movies }) {
-
-    return(
-      <ul>
+/* eslint-disable react/prop-types */
+function ListOfMovies ({ movies }) {
+  return (
+    <ul>
       {
         movies.map(movie => (
           <li key={movie.id}>
             <h3>{movie.title}</h3>
             <p>{movie.year}</p>
-            <img src={movie.Poster} alt={movie.Title} />
+            <img src={movie.image} alt={movie.Title} />
           </li>
         ))
       }
     </ul>
-    )
-  }
+  )
+}
 
-export function NoMoviesResult () {
+function NoMoviesResult () {
     return(
       <p>No hay resultados para esta búsqueda</p>
     )
@@ -26,7 +26,7 @@ export function Movies ({ movies }) {
 
   return (
     hasMovies   
-         ? <ListOfMovies movies={movies} />
-         : <NoMoviesResult />
+        ? <ListOfMovies movies={movies} />
+        : <NoMoviesResult />
     )
 }
